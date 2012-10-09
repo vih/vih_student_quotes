@@ -1,0 +1,131 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  vih_student_quotes.features.field.inc: n/a
+#  vih_student_quotes.features.inc: n/a
+#  vih_student_quotes.views_default.inc: n/a
+#  vih_student_quotes.info: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2012-10-09 13:42+0200\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: vih_student_quotes.features.field.inc:186
+msgid "Billede"
+msgstr ""
+
+#: vih_student_quotes.features.field.inc:187
+msgid "Tekst"
+msgstr ""
+
+#: vih_student_quotes.features.inc:30 vih_student_quotes.views_default.inc:277
+msgid "Elevcitater"
+msgstr ""
+
+#: vih_student_quotes.features.inc:32
+msgid "Used for quotes about the long courses."
+msgstr ""
+
+#: vih_student_quotes.features.inc:34
+msgid "Title"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:261
+msgid "Master"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:262
+msgid "mere"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:263
+msgid "Udfør"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:264
+msgid "Gendan"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:265
+msgid "Sortér efter"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:266
+msgid "Stigende"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:267
+msgid "Faldende"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:268
+msgid "Elementer pr. side"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:269
+msgid "- Alle -"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:270
+msgid "Forskydning"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:271
+msgid "« første"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:272
+msgid "‹ forrige"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:273
+msgid "næste ›"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:274
+msgid "sidste »"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:275
+msgid "Blok"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:276
+msgid "Content pane"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:278
+msgid "Titel"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:279
+msgid "View panes"
+msgstr ""
+
+#: vih_student_quotes.views_default.inc:280
+msgid "Side"
+msgstr ""
+
+#: vih_student_quotes.info:0
+msgid "VIH Student Quotes"
+msgstr ""
+
+#: vih_student_quotes.info:0
+msgid "Holds student quotes for long courses"
+msgstr ""
+
+#: vih_student_quotes.info:0
+msgid "VIH"
+msgstr ""
+
