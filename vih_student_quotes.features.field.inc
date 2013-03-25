@@ -76,7 +76,7 @@ function vih_student_quotes_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '32',
+        'weight' => '1',
       ),
     ),
   );
@@ -142,6 +142,9 @@ function vih_student_quotes_field_default_fields() {
         'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png jpg jpeg',
+        'focus' => 0,
+        'focus_lock_ratio' => 0,
+        'focus_min_size' => '',
         'imagecrop' => array(
           'content_width' => 0,
         ),
@@ -176,7 +179,79 @@ function vih_student_quotes_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '34',
+        'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-vih_long_course_quotes-field_student_quote_category'.
+  $fields['node-vih_long_course_quotes-field_student_quote_category'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_student_quote_category',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'vih_student_quote_category',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'vih_long_course_quotes',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 2,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_student_quote_category',
+      'label' => 'Kategori',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '3',
       ),
     ),
   );
@@ -184,6 +259,7 @@ function vih_student_quotes_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Billede');
+  t('Kategori');
   t('Tekst');
 
   return $fields;

@@ -41,16 +41,16 @@ function vih_student_quotes_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '4',
         ),
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '5',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '6',
         ),
       ),
       'display' => array(),
@@ -85,7 +85,6 @@ function vih_student_quotes_strongarm() {
   $strongarm->name = 'node_options_vih_long_course_quotes';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
   );
   $export['node_options_vih_long_course_quotes'] = $strongarm;
 
@@ -93,14 +92,14 @@ function vih_student_quotes_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_vih_long_course_quotes';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_vih_long_course_quotes'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_vih_long_course_quotes';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_vih_long_course_quotes'] = $strongarm;
 
   return $export;
