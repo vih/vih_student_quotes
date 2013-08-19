@@ -2,7 +2,6 @@ name = VIH Student Quotes
 description = Holds student quotes for long courses
 core = 7.x
 package = VIH
-php = 5.2.4
 version = 7.x-0.5
 project = vih_student_quotes
 dependencies[] = ctools
