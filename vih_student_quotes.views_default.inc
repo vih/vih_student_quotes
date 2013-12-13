@@ -170,6 +170,8 @@ function vih_student_quotes_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['pane_category']['name'] = 'VIH Admin';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['link_to_view'] = '0';
 
   /* Display: Side */
@@ -275,7 +277,7 @@ function vih_student_quotes_views_default_views() {
     t('Content pane'),
     t('Elevcitater'),
     t('Titel'),
-    t('View panes'),
+    t('VIH Admin'),
     t('Side'),
   );
   $export['student_quotes'] = $view;
