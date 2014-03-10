@@ -99,6 +99,7 @@ function vih_student_quotes_field_default_field_instances() {
       'focus' => 0,
       'focus_lock_ratio' => 0,
       'focus_min_size' => '',
+      'focus_required' => 0,
       'imagecrop' => array(
         'content_width' => 0,
       ),
