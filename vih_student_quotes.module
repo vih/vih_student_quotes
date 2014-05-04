@@ -5,3 +5,17 @@
  */
 
 include_once('vih_student_quotes.features.inc');
+
+/**
+ * Implements hook_migrate_api().
+ */
+function vih_student_quotes_migrate_api() {
+  $api = array(
+    'api' => 2,
+    'migrations' => array(
+      'VIHStudentQuoteNode' => array('class_name' => 'VIHStudentQuoteNode'),
+    ),
+  );
+
+  return $api;
+}

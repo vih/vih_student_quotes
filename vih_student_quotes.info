@@ -32,3 +32,5 @@ features[variable][] = node_options_vih_long_course_quotes
 features[variable][] = node_preview_vih_long_course_quotes
 features[variable][] = node_submitted_vih_long_course_quotes
 features[views_view][] = student_quotes
+
+files[] = vih_student_quotes.migrate.inc
