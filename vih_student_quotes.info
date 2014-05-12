@@ -12,7 +12,6 @@ dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = views
 dependencies[] = views_content
-dependencies[] = views_infinite_scroll
 dependencies[] = vih_core
 datestamp = 1346221374
 features[ctools][] = strongarm:strongarm:1
