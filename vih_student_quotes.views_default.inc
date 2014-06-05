@@ -62,10 +62,9 @@ function vih_student_quotes_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Global: Random seed */
-  $handler->display->display_options['sorts']['random_seed']['id'] = 'random_seed';
-  $handler->display->display_options['sorts']['random_seed']['table'] = 'views';
-  $handler->display->display_options['sorts']['random_seed']['field'] = 'random_seed';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -253,18 +252,56 @@ function vih_student_quotes_views_default_views() {
 
   /* Display: Content Pane Category */
   $handler = $view->new_display('panel_pane', 'Content Pane Category', 'panel_pane_2');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'student-quotes';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'media';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'featured';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Billede */
+  $handler->display->display_options['fields']['field_profile_picture']['id'] = 'field_profile_picture';
+  $handler->display->display_options['fields']['field_profile_picture']['table'] = 'field_data_field_profile_picture';
+  $handler->display->display_options['fields']['field_profile_picture']['field'] = 'field_profile_picture';
+  $handler->display->display_options['fields']['field_profile_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_profile_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_profile_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_profile_picture']['settings'] = array(
+    'image_style' => 'thumbnail_tall_employee',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['text'] = '<blockquote>[body]</blockquote>';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '600',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -335,6 +372,7 @@ function vih_student_quotes_views_default_views() {
     t('næste ›'),
     t('sidste »'),
     t('Content Pane Category'),
+    t('<blockquote>[body]</blockquote>'),
     t('Category'),
     t('VIH Long Courses'),
   );
