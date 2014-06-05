@@ -26,9 +26,9 @@ function vih_student_quotes_views_api($module = NULL, $api = NULL) {
 function vih_student_quotes_node_info() {
   $items = array(
     'vih_long_course_quotes' => array(
-      'name' => t('Elevcitater'),
+      'name' => t('Quote Long Course'),
       'base' => 'node_content',
-      'description' => t('Used for quotes about the long courses.'),
+      'description' => t('Quote from a student on a long course.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
