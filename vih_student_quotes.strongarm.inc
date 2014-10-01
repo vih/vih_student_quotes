@@ -85,6 +85,7 @@ function vih_student_quotes_strongarm() {
   $strongarm->name = 'node_options_vih_long_course_quotes';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_vih_long_course_quotes'] = $strongarm;
 
