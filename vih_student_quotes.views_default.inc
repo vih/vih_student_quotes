@@ -86,10 +86,6 @@ function vih_student_quotes_views_default_views() {
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
 
-  /* Display: Blok */
-  $handler = $view->new_display('block', 'Blok', 'block_1');
-  $handler->display->display_options['block_caching'] = '-1';
-
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -253,15 +249,13 @@ function vih_student_quotes_views_default_views() {
   /* Display: Content Pane Category */
   $handler = $view->new_display('panel_pane', 'Content Pane Category', 'panel_pane_2');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'student-quotes';
+  $handler->display->display_options['css_class'] = 'teachers';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'media';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -289,19 +283,6 @@ function vih_student_quotes_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['text'] = '<blockquote>[body]</blockquote>';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '600',
-  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -323,7 +304,6 @@ function vih_student_quotes_views_default_views() {
   $handler->display->display_options['filters']['field_student_quote_category_tid']['id'] = 'field_student_quote_category_tid';
   $handler->display->display_options['filters']['field_student_quote_category_tid']['table'] = 'field_data_field_student_quote_category';
   $handler->display->display_options['filters']['field_student_quote_category_tid']['field'] = 'field_student_quote_category_tid';
-  $handler->display->display_options['filters']['field_student_quote_category_tid']['value'] = '';
   $handler->display->display_options['filters']['field_student_quote_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_student_quote_category_tid']['expose']['operator_id'] = 'field_student_quote_category_tid_op';
   $handler->display->display_options['filters']['field_student_quote_category_tid']['expose']['label'] = 'Category';
@@ -337,6 +317,7 @@ function vih_student_quotes_views_default_views() {
     6 => 0,
     5 => 0,
   );
+  $handler->display->display_options['filters']['field_student_quote_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_student_quote_category_tid']['vocabulary'] = 'vih_student_quote_category';
   $handler->display->display_options['pane_category']['name'] = 'VIH Long Courses';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -357,13 +338,12 @@ function vih_student_quotes_views_default_views() {
     t('Sortér efter'),
     t('Stigende'),
     t('Faldende'),
-    t('Blok'),
-    t('more'),
     t('Content pane'),
     t('Elevcitater'),
     t('Title'),
     t('VIH Admin'),
     t('Side'),
+    t('more'),
     t('Elementer pr. side'),
     t('- Alle -'),
     t('Forskydning'),
@@ -372,7 +352,6 @@ function vih_student_quotes_views_default_views() {
     t('næste ›'),
     t('sidste »'),
     t('Content Pane Category'),
-    t('<blockquote>[body]</blockquote>'),
     t('Category'),
     t('VIH Long Courses'),
   );
