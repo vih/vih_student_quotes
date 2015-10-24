@@ -26,9 +26,9 @@ function vih_student_quotes_views_api($module = NULL, $api = NULL) {
 function vih_student_quotes_node_info() {
   $items = array(
     'vih_long_course_quotes' => array(
-      'name' => t('Quote Long Course'),
+      'name' => t('Long Course Testimonal'),
       'base' => 'node_content',
-      'description' => t('Quote from a student on a long course.'),
+      'description' => t('Use <em>long course testimonial</em> when adding a quote about a long course.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
