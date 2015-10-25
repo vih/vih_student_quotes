@@ -1,5 +1,5 @@
-name = VIH Student Quotes
-description = Holds student quotes for long courses
+name = VIH Long Course Student Testimonials
+description = Handles student testimonials / quotes for long courses
 core = 7.x
 package = VIH
 version = 7.x-0.5
