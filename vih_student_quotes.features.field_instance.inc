@@ -34,10 +34,13 @@ function vih_student_quotes_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -61,7 +64,8 @@ function vih_student_quotes_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-vih_long_course_quotes-field_profile_picture'
+  // Exported field_instance:
+  // 'node-vih_long_course_quotes-field_profile_picture'
   $field_instances['node-vih_long_course_quotes-field_profile_picture'] = array(
     'bundle' => 'vih_long_course_quotes',
     'deleted' => 0,
@@ -79,24 +83,22 @@ function vih_student_quotes_field_default_field_instances() {
       ),
       'featured' => array(
         'label' => 'hidden',
-        'module' => 'colorbox',
+        'module' => 'image',
         'settings' => array(
-          'colorbox_caption' => 'auto',
-          'colorbox_caption_custom' => '',
-          'colorbox_gallery' => 'post',
-          'colorbox_gallery_custom' => '',
-          'colorbox_image_style' => 'panopoly_image_full',
-          'colorbox_multivalue_index' => NULL,
-          'colorbox_node_style' => 'thumbnail_tall_employee',
-          'colorbox_node_style_first' => '',
+          'image_link' => '',
+          'image_style' => 'thumbnail_tall_employee',
         ),
-        'type' => 'colorbox',
+        'type' => 'image',
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'thumbnail_tall_employee',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
@@ -163,7 +165,8 @@ function vih_student_quotes_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-vih_long_course_quotes-field_student_quote_category'
+  // Exported field_instance:
+  // 'node-vih_long_course_quotes-field_student_quote_category'
   $field_instances['node-vih_long_course_quotes-field_student_quote_category'] = array(
     'bundle' => 'vih_long_course_quotes',
     'default_value' => NULL,
@@ -172,10 +175,9 @@ function vih_student_quotes_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'featured' => array(
         'label' => 'above',
@@ -184,10 +186,10 @@ function vih_student_quotes_field_default_field_instances() {
         'weight' => 2,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
