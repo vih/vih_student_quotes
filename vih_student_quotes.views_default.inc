@@ -12,10 +12,10 @@ function vih_student_quotes_views_default_views() {
 
   $view = new view();
   $view->name = 'student_quotes';
-  $view->description = 'Shows quotes for former students at the long courses';
+  $view->description = 'Shows testimonials from former students at the long courses';
   $view->tag = 'VIH';
   $view->base_table = 'node';
-  $view->human_name = 'Student quotes';
+  $view->human_name = 'Student testimonials';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -86,8 +86,8 @@ function vih_student_quotes_views_default_views() {
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  /* Display: Admin pane */
+  $handler = $view->new_display('panel_pane', 'Admin pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Elevcitater';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -161,8 +161,8 @@ function vih_student_quotes_views_default_views() {
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['link_to_view'] = '0';
 
-  /* Display: Side */
-  $handler = $view->new_display('page', 'Side', 'page_1');
+  /* Display: Admin page */
+  $handler = $view->new_display('page', 'Admin page', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Elevcitater';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -259,7 +259,6 @@ function vih_student_quotes_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Billede */
@@ -283,6 +282,12 @@ function vih_student_quotes_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Global: Random seed */
+  $handler->display->display_options['sorts']['random_seed']['id'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['table'] = 'views';
+  $handler->display->display_options['sorts']['random_seed']['field'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['reset_seed_int'] = '28800';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -330,6 +335,65 @@ function vih_student_quotes_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['allow']['panopoly_magic_display_type'] = 0;
+
+  /* Display: Content pane argument */
+  $handler = $view->new_display('panel_pane', 'Content pane argument', 'panel_pane_single_testimonial');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'featured';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Global: Random seed */
+  $handler->display->display_options['sorts']['random_seed']['id'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['table'] = 'views';
+  $handler->display->display_options['sorts']['random_seed']['field'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['reset_seed_int'] = '28800';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['pane_category']['name'] = 'VIH Long Courses';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['allow']['panopoly_magic_display_type'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'user',
+      'context' => 'entity:commerce_customer_profile.commerce-customer-address',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
   $translatables['student_quotes'] = array(
     t('Master'),
     t('mere'),
@@ -338,11 +402,11 @@ function vih_student_quotes_views_default_views() {
     t('Sortér efter'),
     t('Stigende'),
     t('Faldende'),
-    t('Content pane'),
+    t('Admin pane'),
     t('Elevcitater'),
     t('Title'),
     t('VIH Admin'),
-    t('Side'),
+    t('Admin page'),
     t('more'),
     t('Elementer pr. side'),
     t('- Alle -'),
@@ -354,6 +418,8 @@ function vih_student_quotes_views_default_views() {
     t('Content Pane Category'),
     t('Category'),
     t('VIH Long Courses'),
+    t('Content pane argument'),
+    t('All'),
   );
   $export['student_quotes'] = $view;
 
